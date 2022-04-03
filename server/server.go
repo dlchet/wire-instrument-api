@@ -15,6 +15,9 @@ func SetupAPI() *swagger.API {
 	addProvidable := endpoint.New("post", "/providable", "add a new providable to the db",
 		endpoint.Handler(AddProvidable),
 		endpoint.Description(""),
+		endpoint.Body(Providable{}, "providable to be added to the db", true),
+		endpoint.Response(http.StatusOK, Providable{}, "successfully added providable"),
+		endpoint.Tags("providable", "config"),
 	)
 
 	api := swag.New(swag.Endpoints(addProvidable))
