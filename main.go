@@ -5,6 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+
+	"github.com/dlchet/wire-instrument-api/server"
 )
 
 type unit struct {
